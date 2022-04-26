@@ -73,11 +73,34 @@ getEleID("btnKq4").onclick = function () {
     getEleID("div_content").innerHTML = kq;
 }
 
+/**
+ * Bài 5
+ */
 
+function laSoNT(n) {
+    var soNguyenTo;
+    if (n < 2){
+        return soNguyenTo = false;
+    } else {
+        for (var i = 2; i <= Math.sqrt(n); i++){
+            if (n % i == 0) {
+                return soNguyenTo = false;
+            }
+        }
+    }
+    return soNguyenTo = true;
+}
 
-
-
-
+getEleID("btnKq5").onclick = function () {
+    var num5 = getEleID("num5").value;
+    var kq = "";
+    for (var i = 0; i <= num5; i++) {
+        if(laSoNT(i)){
+            kq += i + " ";
+        }
+    }
+    getEleID("kq5").innerHTML = "Số nguyên tố: " + kq;
+}
 
 
 
